@@ -289,8 +289,9 @@ Assign permissions to ost-config.php by going into properties and disabling inhe
 <br />
 
 <p>
-<img width="816" height="910" alt="image" src="https://github.com/user-attachments/assets/3895c376-543a-4418-8fe1-e5f989d4e3a6" />
-</p>
+
+<img width="816" height="910" alt="581652591-3895c376-543a-4418-8fe1-e5f989d4e3a6" src="https://github.com/user-attachments/assets/ac64e1c1-6f91-4df2-a05c-b496250e1cd9" />
+
 <p>
 Continue setting up osTicket in the browser (Continue). Filled out System Settings, Admin User, and Database Settings. For the Admin User username and password:
     
@@ -328,3 +329,40 @@ Went to the top left and right click to Create new -> Database and name it "osTi
 <img width="816" height="433" alt="image" src="https://github.com/user-attachments/assets/eed3b75b-f94f-486d-9afc-808fe4164b15" />
 </p>
 <p>
+Back in the browser with osTicket in Database Settings enter:
+
+    - MySQL Database: osTicket
+    - MySQL Username: root
+    - MySQL Password: root
+
+Click Install!
+</p>
+
+<br />
+
+<p>
+<img width="914" height="722" alt="image" src="https://github.com/user-attachments/assets/f54c081f-7999-4621-ae8d-80fdf7216539" />
+<img width="932" height="592" alt="image" src="https://github.com/user-attachments/assets/cde7c9bc-a964-422b-8aa8-860dc46b080a" />
+</p>
+<p>
+osTicket is now installed! In HeidiSQL in the osticket database there are a tables already created and to store all of the stuff.
+</p>
+<br />
+
+### Step 7: Login
+<p>
+<img width="898" height="918" alt="image" src="https://github.com/user-attachments/assets/a4e1f409-2b66-4ab9-9b6a-765d4d88c0e4" />
+<img width="899" height="564" alt="image" src="https://github.com/user-attachments/assets/595d7dba-a1ef-41cb-8467-0559c14502d8" />
+</p>
+<p>
+http://localhost/osTicket/scp/login.php to login to help desk.
+http://localhost/osTicket/ for end users to send tickets.
+</p>
+<br />
+
+### End of Project
+<p>
+Hopefully after finishing all these steps there are no errors and everything deployed properly. This demonstrates the configuration of web servers (IIS), PHP, MySQL database integration, security adjustments to make a proper help desk using osTicket. Help desk is now ready to go!
+</p>
+<br />
+
