@@ -85,3 +85,41 @@ Went to the Networking tab and verified that my Virtual Network is selected to "
 </p>
 
 ### Step 2: Getting osTicket Files and Dependicies
+<p>
+<img width="976" height="566" alt="image" src="https://github.com/user-attachments/assets/b86befaf-0299-4309-8bf6-23841941cb09" />
+</p>
+<p>
+Go to the windows search bar to open up "Remote Desktop Connection". Copy + Paste the public IP address of the virtual machine to connect. Enter the username and password used during the setup process. 
+</p>
+<br />
+
+<p>
+<img width="362" height="156" alt="image" src="https://github.com/user-attachments/assets/3beb0b89-e320-4d23-9b42-3e11a04ccbb6" />
+<img width="135" height="221" alt="image" src="https://github.com/user-attachments/assets/bae53f78-9405-4375-b3c3-8e0fec4d0a32" />
+</p>
+<p>
+Inside the VM download the required osTicket Installation Files and saved them locally to the desktop. Extracted the contents of the file named "osTicket-Installation-Files". 
+</p>
+<br />
+
+### Step 3: Install and Enable IIS with CGI. (Web Server)
+
+<p>
+<img width="1118" height="628" alt="image" src="https://github.com/user-attachments/assets/83f7eded-fa32-4f2f-bfff-8f4b1aea776b" />
+<img width="1121" height="626" alt="image" src="https://github.com/user-attachments/assets/3d157a89-a727-4b91-9638-9e41be789ca3" />
+<img width="412" height="369" alt="image" src="https://github.com/user-attachments/assets/d0b1b74c-6126-47ae-be85-c3a02d3a791e" />
+
+</p>
+<p>
+Go to the start menu and open the control panel. Then click on programs -> Programs and Features -> Turn Windows features on or off.
+</p>
+<br />
+
+<p>
+<img width="1123" height="630" alt="image" src="https://github.com/user-attachments/assets/fc195a79-7c5f-447a-87a3-9bcd81fa0f86" />
+<img width="450" height="425" alt="image" src="https://github.com/user-attachments/assets/ec4a08f1-4ca3-4131-ba63-7549ac2e27d7" />
+</p>
+<p>
+Enable Internet Information Services. Go to Internet Information Services -> World Wide Web Services -> Application Development Features -> Enable CGI. This will support PHP processing and prepare the server environment for osTicket deployment.
+
+    - Note: You can go to a browser and enter the loopback IP address 127.0.0.1 to verify that the web server setup worked.
