@@ -177,3 +177,65 @@ From the "osTicket-Installation-Files" unzip "php-7.3.8-nts-Win32-VC15-x86" into
  From the "osTicket-Installation-Files" folder install "mysql.5.5.62-win32". This is a database that osTicket will store all of our data in (User accounts, Ticketing Information, etc.)
 </p>
 <br />
+<p>
+<img width="488" height="386" alt="image" src="https://github.com/user-attachments/assets/800b2b4b-e625-4e08-9985-12c56e567e62" />
+<img width="492" height="381" alt="image" src="https://github.com/user-attachments/assets/d183eb28-bbef-4966-bc29-429abd31ac6b" />
+
+</p>
+<p>
+In the setup window select typical and proceed to install. Check the Launch the MySQL Instance Configuration Wizard at the bottom.
+</p>
+<br />
+
+<p>
+<img width="494" height="375" alt="image" src="https://github.com/user-attachments/assets/ce513ac7-c289-4ace-848f-5469789b29dc" />
+<img width="494" height="376" alt="image" src="https://github.com/user-attachments/assets/73a43f16-d006-4dcc-8e67-36bfce3237c0" />
+</p>
+<p>
+After clicking next once you want to select Standard Configuration. Click next. Leave the next page alone and click next. 
+</p>
+<br />
+
+<p>
+<img width="496" height="377" alt="image" src="https://github.com/user-attachments/assets/ca6161bc-50cc-4837-b1f2-e5f30b19b275" />
+<img width="495" height="382" alt="image" src="https://github.com/user-attachments/assets/5f54e4c2-7d95-4fbf-83b8-97342c37a795" />
+</p>
+<p>
+Configure the database admin credentials using:
+    
+    - New root password: root
+    - Confirm: root
+
+Click next then execute.
+
+    - Note: In real world environments, strong credentials should always be used.
+    
+</p>
+<br />
+
+### Step 5: Configuring Web Server
+<p>
+<img width="1421" height="750" alt="image" src="https://github.com/user-attachments/assets/96db59ea-99ee-4159-a911-7984a762032c" />
+</p>
+<p>
+Go to the windows search bar and search for "IIS" (Internet Information Services) and run it as admin.
+</p>
+<br />
+
+<p>
+<img width="1420" height="751" alt="image" src="https://github.com/user-attachments/assets/a2bc3b20-5058-4e99-a1a7-14db99efe4f1" />
+<img width="1423" height="744" alt="image" src="https://github.com/user-attachments/assets/98a8a8e9-0390-4f42-8747-546a92189ce9" />
+</p>
+<p>
+Open PHP Manager. Register new PHP version then browse to the PHP folder in the C drive and open php-cgi (C:\PHP\php-cgi.exe). This will make the web server aware of PHP on the computer and telling it where it is.
+</p>
+<br />
+
+<p>
+<img width="1423" height="749" alt="image" src="https://github.com/user-attachments/assets/5aad967f-e66a-430e-b201-7a2f36509377" />
+<img width="206" height="691" alt="image" src="https://github.com/user-attachments/assets/ba47d2a3-c078-4dae-911f-f0b85199f928" />
+</p>
+<p>
+In IIS go back to the home page and restart the IIS service to apply the changes and ensure the web server properly recognized the newly registered PHP runtime.
+</p>
+<br />
