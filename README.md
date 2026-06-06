@@ -123,3 +123,57 @@ Go to the start menu and open the control panel. Then click on programs -> Progr
 Enable Internet Information Services. Go to Internet Information Services -> World Wide Web Services -> Application Development Features -> Enable CGI. This will support PHP processing and prepare the server environment for osTicket deployment.
 
     - Note: You can go to a browser and enter the loopback IP address 127.0.0.1 to verify that the web server setup worked.
+
+<img width="918" height="947" alt="image" src="https://github.com/user-attachments/assets/5a0a3419-752d-4788-b8dc-556ed5f2069e" />
+
+</p>
+<br />
+
+### Step 4: Installing Required Components for osTicket
+<p>
+<img width="1118" height="631" alt="image" src="https://github.com/user-attachments/assets/e8cd99ea-25a3-465e-9a14-242d9bf6c4ff" />
+</p>
+<p>
+ From the "osTicket-Installation-Files" folder install "PHPManagerForIIS_V1.5.0".
+</p>
+<br />
+
+<p>
+<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/60fc0578-5637-46e3-b147-1d5e04733690" />
+</p>
+<p>
+ From the "osTicket-Installation-Files" folder install "rewrite_amd64_en-US".
+</p>
+<br />
+
+<p>
+<img width="1122" height="634" alt="image" src="https://github.com/user-attachments/assets/063dba2c-6614-4ca6-924b-575019a98f26" />
+</p>
+<p>
+ Open File Exploer and open your C-Drive (This PC -> Windows C:) to create a new folder called PHP. 
+</p>
+<br />
+
+<p>
+<img width="1033" height="737" alt="image" src="https://github.com/user-attachments/assets/7c630b1e-c9a0-49d6-9688-48c31660e832" />
+</p>
+<p>
+From the "osTicket-Installation-Files" unzip "php-7.3.8-nts-Win32-VC15-x86" into the PHP folder (C:\PHP).
+</p>
+<br />
+
+<p>
+<img width="1129" height="638" alt="image" src="https://github.com/user-attachments/assets/ac349ea4-b49d-440a-af1d-95571b3ba9f1" />
+</p>
+<p>
+ From the "osTicket-Installation-Files" folder install "VC_redist.x86". This will satisfy runtime dependencies necessary for PHP to function correctly within the IIS environment.
+</p>
+<br />
+
+<p>
+<img width="1118" height="629" alt="image" src="https://github.com/user-attachments/assets/656874fd-266b-4072-bcb8-502b6df9f735" />
+</p>
+<p>
+ From the "osTicket-Installation-Files" folder install "mysql.5.5.62-win32". This is a database that osTicket will store all of our data in (User accounts, Ticketing Information, etc.)
+</p>
+<br />
