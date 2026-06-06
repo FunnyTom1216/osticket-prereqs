@@ -239,3 +239,92 @@ Open PHP Manager. Register new PHP version then browse to the PHP folder in the 
 In IIS go back to the home page and restart the IIS service to apply the changes and ensure the web server properly recognized the newly registered PHP runtime.
 </p>
 <br />
+
+### Step 6: Installing osTicket
+
+<p>
+<img width="1121" height="627" alt="image" src="https://github.com/user-attachments/assets/4260737f-c347-4e8a-af90-ada1e2fafa5d" />
+<img width="1124" height="820" alt="image" src="https://github.com/user-attachments/assets/9b2e4420-6065-4f2c-a101-139741648f5c" />
+</p>
+<p>
+Extract "osTicket-v1.15.8.zip" from the osTicket-Installation-Files. Open the extracted folder and copied the upload folder to wwwroot (C:\inetpub\wwwroot). Upload was renamed to osTicket to align with the intended site structure.
+</p>
+<br />
+
+<p>
+<img width="1421" height="747" alt="image" src="https://github.com/user-attachments/assets/9c6ec5b9-768d-4994-a269-4cf28db4605d" />
+<img width="916" height="924" alt="image" src="https://github.com/user-attachments/assets/9d2f3028-0b58-4e5c-9dda-a010a42cc9c4" />
+</p>
+<p>
+Reload IIS. In IIS navigate to Sites -> Default Web Site -> osTicket and click on Browse:80(http). This will open osTicket site in your browser and verifies that everything is working properly.
+</p>
+<br />
+
+<p>
+<img width="1419" height="744" alt="image" src="https://github.com/user-attachments/assets/f5381da5-89d5-4803-9fc2-f7b675961504" />
+<img width="1419" height="749" alt="image" src="https://github.com/user-attachments/assets/577a07a7-a809-41ad-9ab5-d741248419f1" />
+<img width="497" height="255" alt="image" src="https://github.com/user-attachments/assets/55aa2009-7c7b-424c-b30a-fe15c94b0a3c" />
+</p>
+<p>
+Back in IIS go to Sites -> Default Web Site -> osTicket and click into PHP Manager. Go to enable or disable an extension at the bottom of the window. Enable the required PHP extensions php_imap.dll, php_intl.dll, and php_opcache.dll through PHP Manager to ensure full application compatibility and functionality. Refresh the page to verify it worked. 
+</p>
+<br />
+
+<p>
+<img width="1125" height="632" alt="image" src="https://github.com/user-attachments/assets/366cdbf4-a289-496d-bdfb-bd825fe137ad" />
+</p>
+<p>
+Rename the sample configuration file from: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php to C:\inetpub\wwwroot\osTicket\include\ost-config.php.
+</p>
+<br />
+
+<p>
+<img width="915" height="595" alt="image" src="https://github.com/user-attachments/assets/87d72678-f655-4d52-91e9-b996c1ad69b1" />
+<img width="912" height="589" alt="image" src="https://github.com/user-attachments/assets/a5550abf-68b8-4cf1-993c-f43dbb1da51c" />
+<img width="766" height="517" alt="image" src="https://github.com/user-attachments/assets/c99ed92d-2b82-4b20-b56a-2e4e6dfb7aee" />
+</p>
+<p>
+Assign permissions to ost-config.php by going into properties and disabling inherited permissions and manually adding the appropriate access: Everyone -> Full Control to allow the application to have access and change the file.
+</p>
+<br />
+
+<p>
+<img width="816" height="910" alt="image" src="https://github.com/user-attachments/assets/3895c376-543a-4418-8fe1-e5f989d4e3a6" />
+</p>
+<p>
+Continue setting up osTicket in the browser (Continue). Filled out System Settings, Admin User, and Database Settings. For the Admin User username and password:
+    
+    - Username: adminuser
+    - Password: Password1
+</p>
+<br />
+
+<p>
+<img width="1122" height="629" alt="image" src="https://github.com/user-attachments/assets/d656b7f4-08cf-424b-8fb9-1c72f5d6068c" />
+<img width="778" height="606" alt="image" src="https://github.com/user-attachments/assets/48fb1211-2947-4495-b3fa-4abc30387ba6" />
+</p>
+<p>
+Just need to create a dedicated database named osTicket to support the application backend. From the "osTicket-Installation-Files" folder and install HeidiSQL_12.3.0.6589_Setup. Heidi allows access to the database and to configure it. Didn't change any settings and check Launch HeidiSQL.
+</p>
+<br />
+
+<p>
+<img width="683" height="479" alt="image" src="https://github.com/user-attachments/assets/2e88f075-1774-4c62-adc2-f14724a0862d" />
+</p>
+<p>
+Click New and enter the User and Password from the setup of the SQL Server then click open to have a connection to the database.
+</p>
+<br />
+
+<p>
+<img width="931" height="590" alt="image" src="https://github.com/user-attachments/assets/44b476c7-2cbb-459a-a831-16abe1c27cd6" />
+</p>
+<p>
+Went to the top left and right click to Create new -> Database and name it "osTicket". The installation of osTicket will make use of this database and put whatever information/data in there.
+</p>
+<br />
+
+<p>
+<img width="816" height="433" alt="image" src="https://github.com/user-attachments/assets/eed3b75b-f94f-486d-9afc-808fe4164b15" />
+</p>
+<p>
