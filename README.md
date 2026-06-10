@@ -431,6 +431,8 @@ it should look like this ( note i ended up deleting the scripts fold you only ne
 <p>
 <p>
   Go to sites -> Default -> osTicket
+  <p>
+<p>
 <img width="413" height="377" alt="581644238-9c6ec5b9-768d-4994-a269-4cf28db4605d pt1" src="https://github.com/user-attachments/assets/d183c989-e193-4622-bfc9-a57a2eb8008a" />
 <p>
 <p>
@@ -440,112 +442,264 @@ On the right, click “Browse *:80”
   <img width="1206" height="255" alt="581644238-9c6ec5b9-768d-4994-a269-4cf28db4605d pt2" src="https://github.com/user-attachments/assets/b42f9297-9253-4cb1-8dfb-a47b0100ed8f" />
 <p>
 <p>
+  It should look like this
+  <p>
+<p>
 <img width="916" height="924" alt="image" src="https://github.com/user-attachments/assets/9d2f3028-0b58-4e5c-9dda-a010a42cc9c4" />
 </p>
 <p>
+Now go back into IIS, go to Sites -> Default Web Site -> osTicket and click into PHP Manager. 
+</p>
+<br />
+<img width="576" height="240" alt="581646601-f5381da5-89d5-4803-9fc2-f7b675961504 (1)" src="https://github.com/user-attachments/assets/6f303977-6ea9-4c03-8cc6-b62fcf2dce08" />
+<p>
+<p>
+Go to enable or disable an extension at the bottom of the window.
+ <p>
+<p>
+  <img width="634" height="588" alt="581646601-f5381da5-89d5-4803-9fc2-f7b675961504" src="https://github.com/user-attachments/assets/5e7575d7-0109-454b-97f9-4c03af2a9877" />
+<p>
+<p>
+  From here we are gonna look for the required PHP extensions [php_imap.dll], [php_intl.dll], and [php_opcache.dll] through PHP Manager to ensure full application compatibility and functionality.
+  <p>
+<p>
+<img width="1178" height="587" alt="1cf52229-95e9-4879-8872-68df3469ef14" src="https://github.com/user-attachments/assets/71955fe4-b0b1-458e-bed6-98b7186930b0" />
+  <p>
+<p>
+One all three PHP Extensions are enabled it'll look like this
+  <p>
+<p>
+  <img width="497" height="428" alt="68ecf982-fc2c-496e-8daf-f87c649d94f5" src="https://github.com/user-attachments/assets/fcbd75b0-d8e8-4b8f-aa44-f8ee414eaa3f" />
+  <p>
+<p>
+-Head back to the osTicket installer from eairler to comfirm that it is fully updated
+  <p>
+<p>
+  before
+  <p> 
+  </p>
+  <img width="671" height="355" alt="581645252-9d2f3028-0b58-4e5c-9dda-a010a42cc9c4" src="https://github.com/user-attachments/assets/8eec6095-f2f2-4de2-89c0-336381979fba" />
+</p>
+<p>
+  after
+   <p> 
+  </p>
+  <img width="497" height="255" alt="581647844-55aa2009-7c7b-424c-b30a-fe15c94b0a3c" src="https://github.com/user-attachments/assets/9b993d96-82ee-4a8f-aa45-d24f70089a8f" />
+</p>
+<br />
+Next we are gonna head back into our files, and in the big search bar we are gonna search C:\inetpub\wwwroot\osTicket\include. 
+  -the file we will be looking for is [ost-sampleconfig.php]
+   <p> 
+  </p>
+<img width="824" height="622" alt="9e74da22-fc6e-4922-9323-574824ddb109" src="https://github.com/user-attachments/assets/eef6ebca-650a-4f87-a105-1e69cfa7911b" />
+ <p> 
+  </p>
+  once we've found this file we are gonna rename it [ost-config.php] Very important do not include any space when renaming file can just not work afterwards
+<p>
+</p>
+<img width="682" height="157" alt="bb331a79-abea-4568-845e-e3dbb238c3ec" src="https://github.com/user-attachments/assets/fd2b662f-92e8-4041-a795-2e814f02fb15" />
+<p>
+<p>
+We are now going assign permissions to ost-config.php by going into properties and disabling inherited permissions and manually adding the appropriate access: Everyone -> Full Control to allow the application to have access and change the file.
+  </p>
+<br />
+  -On the file we are gonna right click and go to properties
+</p>
+<br />
+<img width="383" height="395" alt="8652cab4-25e5-4099-9ae5-1c132b93d366" src="https://github.com/user-attachments/assets/c0c9f135-6f98-4b57-9244-c7ed34424fb8" />
+<img width="401" height="501" alt="0050b7b5-26a7-4d18-8487-3c2e8a38f8a5" src="https://github.com/user-attachments/assets/542de228-9a2c-45ca-8515-d69b24da781f" />
+</p>
+<p>
+  -Then we will check the security tab on the top, and click the "advanced" button to open up special permissions 
+</p>
+<p>
+<img width="382" height="448" alt="5a651615-18c9-40db-adc5-f3a9e1035907" src="https://github.com/user-attachments/assets/b87d766c-9353-43f2-bc2d-bb7ca04682a3" />
 
 </p>
 <br />
+  -From the security tab: Advance settings, we will click "Disable Inheritance". A security window will pop up asking basically "are you sure, want to remove inherited permissions?" click remove all
+<p>
+  <p>
+<img width="754" height="509" alt="cb54dbb0-a435-44df-9fd3-05ff2512403f" src="https://github.com/user-attachments/assets/eda049e6-e1a5-4b3a-83d6-190303484e96" />
+<img width="513" height="269" alt="33b18e9b-2e83-4f55-afb1-ccd88b31ad16" src="https://github.com/user-attachments/assets/e8cbd13e-274e-438b-b982-1ef33d4a5e52" />
+<p>
+<p>
+ -after the Inherited permissions is disable should look like this
+<p>
+<p>
+  <img width="732" height="430" alt="ae0afc64-bede-4e4b-8aa4-875b7d41cb5e (1)" src="https://github.com/user-attachments/assets/52489a55-4455-425b-8635-7d50a086083c" />
+<p>
+<p>
+  -Next we are gonna add new permissions by clicking the "add" 
+  <p>
+<p>
+<img width="205" height="91" alt="020040d9-9bc2-49ab-967f-0153a2a0a9c5" src="https://github.com/user-attachments/assets/1cd04131-3022-43c7-9518-cecf4d07fb48" />
+  <p>
+<p>
+  -From here you will click on "select a principle"
+  <p>
+<p>
+<img width="444" height="429" alt="8d5b2273-7851-4831-a5e6-1998d256a004" src="https://github.com/user-attachments/assets/39e285c3-409d-464a-855d-1b2ef8d108f1" />
+  <p>
+<p>
+  -In the text box you will type Everyone (only for the sake of this project), then click on check names, then hit ok
+    <p>
+<p>
+<img width="458" height="264" alt="429c786e-d178-4fb7-be24-62c10a836759" src="https://github.com/user-attachments/assets/8de821b3-e6a9-4235-b8e6-ce9500392149" />
+  <p>
+<p>
+-Once thats done we are gonna check the "full control" box. then "OK"
+  <p>
+<p>
+<img width="236" height="245" alt="9f807cc4-d582-4435-be74-65303abb69b4" src="https://github.com/user-attachments/assets/45660534-0ecc-41e0-8a52-378171a06167" />
+  <p>
+<p>
+  - We can now press "Apply" then "OK"
+  <p>
+<p>
+<img width="762" height="518" alt="8b2f132c-5886-480b-94b6-8418a000a62a" src="https://github.com/user-attachments/assets/ce3cf555-36b9-402d-9f72-ac7d467c42f4" />
+  <p>
+<p>
 
-<p>
-<img width="1419" height="744" alt="image" src="https://github.com/user-attachments/assets/f5381da5-89d5-4803-9fc2-f7b675961504" />
-<img width="1419" height="749" alt="image" src="https://github.com/user-attachments/assets/577a07a7-a809-41ad-9ab5-d741248419f1" />
-<img width="497" height="255" alt="image" src="https://github.com/user-attachments/assets/55aa2009-7c7b-424c-b30a-fe15c94b0a3c" />
-</p>
-<p>
-Back in IIS go to Sites -> Default Web Site -> osTicket and click into PHP Manager. Go to enable or disable an extension at the bottom of the window. Enable the required PHP extensions php_imap.dll, php_intl.dll, and php_opcache.dll through PHP Manager to ensure full application compatibility and functionality. Refresh the page to verify it worked. 
-</p>
-<br />
+______________________________________________________________________________________________
 
-<p>
-<img width="1125" height="632" alt="image" src="https://github.com/user-attachments/assets/366cdbf4-a289-496d-bdfb-bd825fe137ad" />
-</p>
-<p>
-Rename the sample configuration file from: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php to C:\inetpub\wwwroot\osTicket\include\ost-config.php.
-</p>
-<br />
+### Step 7: Completing osTicket settup and Login in
 
+  <p>
 <p>
-<img width="915" height="595" alt="image" src="https://github.com/user-attachments/assets/87d72678-f655-4d52-91e9-b996c1ad69b1" />
-<img width="912" height="589" alt="image" src="https://github.com/user-attachments/assets/a5550abf-68b8-4cf1-993c-f43dbb1da51c" />
-<img width="766" height="517" alt="image" src="https://github.com/user-attachments/assets/c99ed92d-2b82-4b20-b56a-2e4e6dfb7aee" />
-</p>
+Continue setting up osTicket in the browser "Continue"
+   <p>
 <p>
-Assign permissions to ost-config.php by going into properties and disabling inherited permissions and manually adding the appropriate access: Everyone -> Full Control to allow the application to have access and change the file.
-</p>
-<br />
-
+<img width="845" height="780" alt="926bdd06-bba5-4298-a2b8-e46d21e55a54" src="https://github.com/user-attachments/assets/afbec0f9-9faf-4c96-95b1-dffd73227d1c" />
+ <p>
 <p>
-
-<img width="816" height="910" alt="581652591-3895c376-543a-4418-8fe1-e5f989d4e3a6" src="https://github.com/user-attachments/assets/ac64e1c1-6f91-4df2-a05c-b496250e1cd9" />
-
+  -Filled out System Settings. this can be anything including the name and email (for project sake)
+   <p>
 <p>
-Continue setting up osTicket in the browser (Continue). Filled out System Settings, Admin User, and Database Settings. For the Admin User username and password:
+  <img width="642" height="270" alt="9173c9ac-841d-40b0-a5f4-c77b0ae13c27" src="https://github.com/user-attachments/assets/49fd190f-0566-4ed9-85ef-9d43d6ae6275" />
+    <p>
+<p>
+  
+  - For Name Again you can put anything as well as for email Just make sureits different from the one you used before. For the Admin User username and password:
     
     - Username: adminuser
     - Password: Password1
 </p>
 <br />
-
-<p>
-<img width="1122" height="629" alt="image" src="https://github.com/user-attachments/assets/d656b7f4-08cf-424b-8fb9-1c72f5d6068c" />
-<img width="778" height="606" alt="image" src="https://github.com/user-attachments/assets/48fb1211-2947-4495-b3fa-4abc30387ba6" />
-</p>
-<p>
-Just need to create a dedicated database named osTicket to support the application backend. From the "osTicket-Installation-Files" folder and install HeidiSQL_12.3.0.6589_Setup. Heidi allows access to the database and to configure it. Didn't change any settings and check Launch HeidiSQL.
+<img width="504" height="360" alt="22f0cc84-97b1-48e3-9807-f7c41868204b" src="https://github.com/user-attachments/assets/c68c593c-a82b-4238-98ec-f3b3afe87083" />
 </p>
 <br />
-
+  -When we get to this part we are gonna have to top for a moment. we have to  install HeidiSQL. in order to complete this settup
+<img width="613" height="374" alt="25032ba6-adbf-4883-80b9-d01c1b8f13d4" src="https://github.com/user-attachments/assets/579c8222-39d0-4978-80e0-6a6c0d812e07" />
+ </p>
+<br />
+-head back to the “osTicket-Installation-Files” folder, and install HeidiSQL.
 <p>
-<img width="683" height="479" alt="image" src="https://github.com/user-attachments/assets/2e88f075-1774-4c62-adc2-f14724a0862d" />
 </p>
+<img width="796" height="306" alt="b80db95a-1202-44fe-bf4c-dbbf5c67f6ef" src="https://github.com/user-attachments/assets/9f294c11-acac-4128-8f59-cf355a38d379" />
 <p>
-Click New and enter the User and Password from the setup of the SQL Server then click open to have a connection to the database.
+<p>
+  -When you get here one thing you need to make sure is that you accept terms, then to save time mash the next button until you get to the intall. Go ahead and press install
+  <p>
+<p>
+ <img width="583" height="452" alt="844cb56e-a13a-4235-9780-69d840b7f620" src="https://github.com/user-attachments/assets/26c2b391-53a0-4421-8bb7-80b62d122225" />
+<img width="582" height="454" alt="5beef299-0182-47d3-9a10-4824053db26f" src="https://github.com/user-attachments/assets/21351e2e-f63f-4997-b61a-e56390b6875f" />
+  <p>
+<p>
+-Once this pops up just make sure the "launch" is check before hiting finish
 </p>
 <br />
-
-<p>
-<img width="931" height="590" alt="image" src="https://github.com/user-attachments/assets/44b476c7-2cbb-459a-a831-16abe1c27cd6" />
-</p>
-<p>
-Went to the top left and right click to Create new -> Database and name it "osTicket". The installation of osTicket will make use of this database and put whatever information/data in there.
+<img width="585" height="457" alt="39cdf920-c5e6-4b75-b3a6-7e729db1c0a8" src="https://github.com/user-attachments/assets/424874ed-a04d-4b52-83ac-f976065a5cbb" />
 </p>
 <br />
-
+You can press skip to continue
 <p>
-<img width="816" height="433" alt="image" src="https://github.com/user-attachments/assets/eed3b75b-f94f-486d-9afc-808fe4164b15" />
 </p>
-<p>
-Back in the browser with osTicket in Database Settings enter:
+<img width="368" height="444" alt="cabcb867-2643-4237-a846-1f08f0457470" src="https://github.com/user-attachments/assets/0369d90f-9a7b-475f-a2d1-85dc99c3b6e1" />
+</p>
+<br />
+Finally when your in HeidiSol, we are gonna click new at the bottom of the screen
+</p>
+<br />
+<img width="470" height="473" alt="2374af77-1aa7-4d56-bdc7-ba7395f3e39b" src="https://github.com/user-attachments/assets/30c5ed31-df48-4586-bc0a-f639390c5a59" />
+</p>
+<br />
+Your page will look like this
+</p>
+<br />
+<img width="915" height="585" alt="5dae9f22-0e40-44e0-930b-aa57cc1a62d2" src="https://github.com/user-attachments/assets/ff0582c3-948a-4e3d-b864-700cf9f0a94f" />
+</p>
+<br />
+Next we are gonna right click UNAMED > CREATE NEW > DATABASE, in that order
+</p>
+<br />
+<img width="475" height="274" alt="1a24b284-51d5-4f4f-9bcc-aea634176a8b" src="https://github.com/user-attachments/assets/ebd44088-59ec-4a71-a7b0-ab5928f298ff" />
+</p>
+<br /> 
+All we gotta worry about is the uuser and password. If you recall from earlier we made the user and password both: root
+so that is what we are gonna do here. then press "open"
+</p>
+</p>
+<img width="672" height="444" alt="fa55600f-e8bf-46b6-b168-7b65d76c047e" src="https://github.com/user-attachments/assets/86d2bfe1-8e77-445e-9691-563d588df027" />
+</p>
+</p>
+This will open our connection to our data base
+  </p>
+</p>
+<img width="928" height="583" alt="Screenshot 2026-06-10 152739" src="https://github.com/user-attachments/assets/a13c13d2-0f3a-4d62-9e11-66b94c80546b" />
+  </p>
+</p>
+Now have to create a database called "osticket". so as we did before, right click UNAMED > CREATE NEW > DATABASE, in that order
+ </p>
+</p>
+
+<img width="475" height="274" alt="1a24b284-51d5-4f4f-9bcc-aea634176a8b" src="https://github.com/user-attachments/assets/ebd44088-59ec-4a71-a7b0-ab5928f298ff" />
+
+ </p>
+</p>
+Now when this pops up, in the name box is where we will put "osTicket" then press ok
+ </p>
+</p>
+
+<img width="316" height="251" alt="Screenshot 2026-06-10 152857" src="https://github.com/user-attachments/assets/d9984863-4aea-4b9b-9b95-11606d4dffe1" />
+ </p>
+</p>
+You know its successfull when osTicket tab is now created
+ </p>
+</p>
+<img width="378" height="501" alt="313940bd-b168-428d-8089-ce363ad4b670" src="https://github.com/user-attachments/assets/4c5f1641-ec58-4be8-9a9f-1efa2d9a4da1" />
+ </p>
+</p>
+We can now head back to OSTIcket to finish the settup. Back in the browser with osTicket in Database Settings enter:
 
     - MySQL Database: osTicket
     - MySQL Username: root
     - MySQL Password: root
-
 Click Install!
+ </p>
 </p>
-
-<br />
-
-<p>
-<img width="914" height="722" alt="image" src="https://github.com/user-attachments/assets/f54c081f-7999-4621-ae8d-80fdf7216539" />
-<img width="932" height="592" alt="image" src="https://github.com/user-attachments/assets/cde7c9bc-a964-422b-8aa8-860dc46b080a" />
+<img width="828" height="376" alt="8c0b4931-daa6-4397-9b03-057964a519e9" src="https://github.com/user-attachments/assets/8343684f-ddf6-4082-bbad-96b6eeb246e4" />
+ </p>
 </p>
-<p>
-osTicket is now installed! In HeidiSQL in the osticket database there are a tables already created and to store all of the stuff.
+Once done it'll say completed (if done properly)
+ </p>
 </p>
-<br />
-
-### Step 7: Login
-<p>
-<img width="898" height="918" alt="image" src="https://github.com/user-attachments/assets/a4e1f409-2b66-4ab9-9b6a-765d4d88c0e4" />
-<img width="899" height="564" alt="image" src="https://github.com/user-attachments/assets/595d7dba-a1ef-41cb-8467-0559c14502d8" />
+<img width="847" height="668" alt="d4349eb9-9f81-47a8-9d22-2def27f7f2e2" src="https://github.com/user-attachments/assets/e9f52a66-aa09-4ef0-9dba-56108992035c" />
+ </p>
 </p>
-<p>
-http://localhost/osTicket/scp/login.php to login to help desk.
-http://localhost/osTicket/ for end users to send tickets.
+Congratulations, hopefully it is installed with no errors!
+-Browse to your help desk login page: (http://localhost/osTicket/scp/login.php)
+ </p>
 </p>
-<br />
+<img width="1100" height="707" alt="365ecfc1-0b7e-43ec-b612-fb8c8c08dc83" src="https://github.com/user-attachments/assets/4c794e86-ecb4-44ef-8eaf-77bd20c1d845" />
+ </p>
+</p>
+  -End Users osTicket URL: (http://localhost/osTicket/)
+   </p>
+</p>
+<img width="1117" height="617" alt="eeec34ec-ce1c-46dc-a9bd-9646bc9614c3" src="https://github.com/user-attachments/assets/e373c8b2-6f9f-41d2-8008-94918d3805b9" />
+ </p>
+</p>
 
 ### End of Project
 <p>
