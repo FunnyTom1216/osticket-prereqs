@@ -184,13 +184,21 @@ In this Section we will be ilstalling/ enabling IIS in the VM.
 <p>
  
 -From the VM, you need to open your control panel from the start menu or the Windows menu.
+<p>
+<p>
+<p>
+
 <img width="727" height="293" alt="Screenshot 2026-06-09 230337" src="https://github.com/user-attachments/assets/1d5f002d-0086-4ab9-af4d-1b41feda6cc2" />
 <p>
 <p>
 <p>
 
--Once opened, click on programs -> Turn Windows features on or off 
-<img width="448" height="377" alt="581603789-83f7eded-fa32-4f2f-bfff-8f4b1aea776b" src="https://github.com/user-attachments/assets/7f0763cd-9f28-446d-9c66-80167492224a" /><img width="478" height="300" alt="581604105-3d157a89-a727-4b91-9638-9e41be789ca3" src="https://github.com/user-attachments/assets/12676a5e-6af8-4d98-ba67-8638b98424b2" />
+  -Once opened, click on programs -> Turn Windows features on or off 
+<p>
+<p>
+<p>
+<img width="448" height="377" alt="581603789-83f7eded-fa32-4f2f-bfff-8f4b1aea776b" src="https://github.com/user-attachments/assets/7f0763cd-9f28-446d-9c66-80167492224a" />
+<img width="478" height="300" alt="581604105-3d157a89-a727-4b91-9638-9e41be789ca3" src="https://github.com/user-attachments/assets/12676a5e-6af8-4d98-ba67-8638b98424b2" />
 <p>
 <p>
 <p>
@@ -228,7 +236,16 @@ ________________________________________________________________________________
 
 ### Step 4: Installing Required Components for osTicket
 <p>
-<img width="1118" height="631" alt="image" src="https://github.com/user-attachments/assets/e8cd99ea-25a3-465e-9a14-242d9bf6c4ff" />
+In this part we are going back to the “osTicket-Installation-Files” folder so we can install PHP Manager for IIS, install the Rewrite Module 
+</p>
+</p>
+lets start with PHP, click on flie then proceed to intall
+<img width="870" height="452" alt="16ec274c-09b9-40ec-af8d-fa0ea1c58822 pt1" src="https://github.com/user-attachments/assets/f4958ddf-8ce5-408a-be8f-83d535ac918e" />
+</p>
+</p>
+<img width="491" height="404" alt="b27855d6-9aa1-4282-a47f-5fd4ff9f91f7" src="https://github.com/user-attachments/assets/46188178-79b5-45ee-93a4-3b7e634f6b53" />
+<img width="497" height="407" alt="2456e397-2b1d-4e73-8eda-f2bde4e45c59" src="https://github.com/user-attachments/assets/97aaad3b-86a4-4d47-af6f-95aff1abb53f" />
+
 </p>
 <p>
  From the "osTicket-Installation-Files" folder install "PHPManagerForIIS_V1.5.0".
