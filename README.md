@@ -248,129 +248,202 @@ lets start with PHP, click on flie then proceed to intall
 
 </p>
 <p>
- From the "osTicket-Installation-Files" folder install "PHPManagerForIIS_V1.5.0".
+ - Once finished then proceed to install the Rewrite file
 </p>
 <br />
-
-<p>
-<img width="1122" height="631" alt="image" src="https://github.com/user-attachments/assets/60fc0578-5637-46e3-b147-1d5e04733690" />
+<img width="870" height="452" alt="16ec274c-09b9-40ec-af8d-fa0ea1c58822 pt2" src="https://github.com/user-attachments/assets/0345dde8-277a-4e37-b1eb-3b843eadafc9" />
 </p>
 <p>
- From the "osTicket-Installation-Files" folder install "rewrite_amd64_en-US".
-</p>
-<br />
-
-<p>
-<img width="1122" height="634" alt="image" src="https://github.com/user-attachments/assets/063dba2c-6614-4ca6-924b-575019a98f26" />
+<img width="545" height="428" alt="db6e188b-f4c9-4abc-a293-2b0da08e275a" src="https://github.com/user-attachments/assets/25ddd618-25ae-4b81-bf7f-3331664f8037" />
+<img width="496" height="385" alt="8016ca41-5c00-4e21-bfa4-606f59053d7f" src="https://github.com/user-attachments/assets/dbfd8d7c-2143-4a8b-9312-ffa77ab3bb1e" />
 </p>
 <p>
  Open File Exploer and open your C-Drive (This PC -> Windows C:) to create a new folder called PHP. 
+<p>
+<img width="1122" height="634" alt="image" src="https://github.com/user-attachments/assets/063dba2c-6614-4ca6-924b-575019a98f26" />
 </p>
 <br />
-
+From the "osTicket-Installation-Files" unzip "php-7.3.8-nts-Win32-VC15-x86" into the PHP folder (C:\PHP) that we had just created.
 <p>
-<img width="1033" height="737" alt="image" src="https://github.com/user-attachments/assets/7c630b1e-c9a0-49d6-9688-48c31660e832" />
+</p>
+<img width="913" height="334" alt="581618449-7c630b1e-c9a0-49d6-9688-48c31660e832" src="https://github.com/user-attachments/assets/80098843-03bc-4466-b23f-3d52b9b7c8b8" />
 </p>
 <p>
-From the "osTicket-Installation-Files" unzip "php-7.3.8-nts-Win32-VC15-x86" into the PHP folder (C:\PHP).
 </p>
-<br />
-
-<p>
-<img width="1129" height="638" alt="image" src="https://github.com/user-attachments/assets/ac349ea4-b49d-440a-af1d-95571b3ba9f1" />
+ Next from "osTicket-Installation-Files" folder, we are going to install "VC_redist.x86". this dependencie is necessary for PHP to function correctly within the IIS environment.
 </p>
-<p>
- From the "osTicket-Installation-Files" folder install "VC_redist.x86". This will satisfy runtime dependencies necessary for PHP to function correctly within the IIS environment.
 </p>
 <br />
-
-<p>
-<img width="1118" height="629" alt="image" src="https://github.com/user-attachments/assets/656874fd-266b-4072-bcb8-502b6df9f735" />
+<img width="656" height="251" alt="d0f39913-a5a2-4ae2-b29f-b3d6eb044123" src="https://github.com/user-attachments/assets/80b50545-d558-444d-bf46-1784fe8bfcef" />
 </p>
-<p>
- From the "osTicket-Installation-Files" folder install "mysql.5.5.62-win32". This is a database that osTicket will store all of our data in (User accounts, Ticketing Information, etc.)
 </p>
-<br />
-<p>
-<img width="488" height="386" alt="image" src="https://github.com/user-attachments/assets/800b2b4b-e625-4e08-9985-12c56e567e62" />
-<img width="492" height="381" alt="image" src="https://github.com/user-attachments/assets/d183eb28-bbef-4966-bc29-429abd31ac6b" />
-
+Click intall, then close
 </p>
-<p>
-In the setup window select typical and proceed to install. Check the Launch the MySQL Instance Configuration Wizard at the bottom.
+</p>
+<img width="497" height="314" alt="af18cc2f-d139-44be-817e-71bf44765108" src="https://github.com/user-attachments/assets/95a2cb94-f9a2-4717-a2b9-e9d931c3305a" />
 </p>
 <br />
+<img width="472" height="292" alt="e8dfdfd2-5b99-4555-ba1f-c49e92c87771" src="https://github.com/user-attachments/assets/e9d6a0a8-fb16-4506-855b-cb57bdd31f9a" />
+</p>
+</p>
 
-<p>
-<img width="494" height="375" alt="image" src="https://github.com/user-attachments/assets/ce513ac7-c289-4ace-848f-5469789b29dc" />
-<img width="494" height="376" alt="image" src="https://github.com/user-attachments/assets/73a43f16-d006-4dcc-8e67-36bfce3237c0" />
+From the "osTicket-Installation-Files" folder install "mysql.5.5.62-win32". This is a database that osTicket will store all of our data in (User accounts, Ticketing Information, etc.)
 </p>
 <p>
-After clicking next once you want to select Standard Configuration. Click next. Leave the next page alone and click next. 
+<img width="612" height="239" alt="4bb8bac7-45d4-4ec5-89fe-81403f598f6e" src="https://github.com/user-attachments/assets/af3f5ac9-986b-41c2-988b-6b3c3b232c35" />
 </p>
 <br />
-
+In the setup window select next, then you will select typical and proceed to install. 
 <p>
-<img width="496" height="377" alt="image" src="https://github.com/user-attachments/assets/ca6161bc-50cc-4837-b1f2-e5f30b19b275" />
-<img width="495" height="382" alt="image" src="https://github.com/user-attachments/assets/5f54e4c2-7d95-4fbf-83b8-97342c37a795" />
+<p>
+<img width="493" height="385" alt="278a1a05-1625-4706-81f4-23b80959df2e" src="https://github.com/user-attachments/assets/47947c33-85c5-47fe-beb6-a74f2e6912c6" />
+<img width="493" height="380" alt="7b9b997e-aacb-43f0-880f-13270bd11287" src="https://github.com/user-attachments/assets/fe02a940-c5f1-4d48-991c-6f2400e67e63" />
 </p>
+<p>
+Check the Launch the MySQL Instance Configuration Wizard at the bottom.
+</p>
+<p>
+  <img width="493" height="381" alt="d1482c30-01ca-4bb1-8764-8820f09b8aaf" src="https://github.com/user-attachments/assets/c2a2f9ee-bba8-4125-8b5b-d818a36e0366" />
+</p>
+<p>
+A new window will pop up just hit next
+</p>
+<br />
+<img width="495" height="380" alt="7401c3eb-7d18-4ddf-a4c2-c321edc4829f" src="https://github.com/user-attachments/assets/39b7a690-ef5c-41ec-9d39-a8c978ef7286" />
+</p>
+<p>
+Now you are gonna select Standard Configuration. Click next. Leave the next page alone and click next. </p>
+<p>
+<img width="492" height="381" alt="a2a076ef-aefd-4b77-8cb5-be59ced7c5d8" src="https://github.com/user-attachments/assets/202891d3-6521-424f-b424-3fa9f13a1164" />
+<p>
+<p>
+make sure to check "intall as windows service" box then hit next
+</p>
+<br />
+<img width="494" height="382" alt="b0baaf04-9706-427b-9a00-c63604ae38f6" src="https://github.com/user-attachments/assets/001cfdd8-7e3d-473e-b22a-13a94d59d90f" />
+<p>
 <p>
 Configure the database admin credentials using:
     
     - New root password: root
     - Confirm: root
+<p>
+<img width="496" height="377" alt="image" src="https://github.com/user-attachments/assets/ca6161bc-50cc-4837-b1f2-e5f30b19b275" />
+</p>
+<p>
 
-Click next then execute.
-
-    - Note: In real world environments, strong credentials should always be used.
-    
+   - Note: In real world environments, strong credentials should always be used.
+</p>
+<p>
+Click next then execute.    
 </p>
 <br />
+<img width="495" height="377" alt="1a752e02-7716-4e27-82e3-307b80a0bf91" src="https://github.com/user-attachments/assets/a6b85c11-8336-46f9-a052-96a406f94e16" />
+</p>
+<p>
+_______________________________________________________________________________________________________________________________________________________________________________
+</p>
 
 ### Step 5: Configuring Web Server
-<p>
-<img width="1421" height="750" alt="image" src="https://github.com/user-attachments/assets/96db59ea-99ee-4159-a911-7984a762032c" />
+
 </p>
 <p>
 Go to the windows search bar and search for "IIS" (Internet Information Services) and run it as admin.
 </p>
-<br />
+<p>
+<img width="846" height="371" alt="8bce3e02-3deb-48e4-a28b-064cbfbd5f3b" src="https://github.com/user-attachments/assets/9f32c837-0fca-4e94-a679-696bf8c1b0de" />
+</p>
+<p>
+-Once in it should look like this 
+  </p>
+<p>
+<img width="1421" height="750" alt="image" src="https://github.com/user-attachments/assets/96db59ea-99ee-4159-a911-7984a762032c" />
+</p>
+<p>
+Open PHP Manager.
+<p>
+  </p>
+<img width="561" height="224" alt="581634019-96db59ea-99ee-4159-a911-7984a762032c" src="https://github.com/user-attachments/assets/e592b785-1095-464b-89e2-16412431bae9" />
+</p>
+<p>
+  
+<img width="1420" height="751" alt="image" src="https://github.com/user-attachments/assets/a2bc3b20-5058-4e99-a1a7-14db99efe4f1" />
+  </p>
+<p>
+-Register new PHP version
+  </p>
+<p>
+  <img width="807" height="309" alt="581635663-a2bc3b20-5058-4e99-a1a7-14db99efe4f1" src="https://github.com/user-attachments/assets/e4178338-a596-4e0d-b15e-7d63c10ba1a0" />
+  </p>
+<p>
+Then browse to the PHP folder in the C drive and open php-cgi (C:\PHP\php-cgi.exe). This will make the web server aware of PHP on the computer and telling it where it is.
+  </p>
+<p>
+  <img width="1200" height="638" alt="d02bb782-6d08-4292-9af2-bcee0cde4743" src="https://github.com/user-attachments/assets/b7c22b3d-d9ba-49ca-8da8-02aaec3e5ff6" />
 
 <p>
-<img width="1420" height="751" alt="image" src="https://github.com/user-attachments/assets/a2bc3b20-5058-4e99-a1a7-14db99efe4f1" />
+<p>
+click ok
+
+<p>
+<p>
 <img width="1423" height="744" alt="image" src="https://github.com/user-attachments/assets/98a8a8e9-0390-4f42-8747-546a92189ce9" />
 </p>
 <p>
-Open PHP Manager. Register new PHP version then browse to the PHP folder in the C drive and open php-cgi (C:\PHP\php-cgi.exe). This will make the web server aware of PHP on the computer and telling it where it is.
+
 </p>
 <br />
-
+Now in IIS go back to the home page and restart the IIS service to apply the changes and ensure the web server properly recognized the newly registered PHP runtime.
 <p>
-<img width="1423" height="749" alt="image" src="https://github.com/user-attachments/assets/5aad967f-e66a-430e-b201-7a2f36509377" />
-<img width="206" height="691" alt="image" src="https://github.com/user-attachments/assets/ba47d2a3-c078-4dae-911f-f0b85199f928" />
-</p>
 <p>
-In IIS go back to the home page and restart the IIS service to apply the changes and ensure the web server properly recognized the newly registered PHP runtime.
-</p>
-<br />
-
+<img width="1423" height="455" alt="581637968-5aad967f-e66a-430e-b201-7a2f36509377" src="https://github.com/user-attachments/assets/a8163837-507f-4762-becf-100d2f148bad" />
+<p>
+<p>
+__________________________________________________________________________________________
+<p>
+  
 ### Step 6: Installing osTicket
 
 <p>
-<img width="1121" height="627" alt="image" src="https://github.com/user-attachments/assets/4260737f-c347-4e8a-af90-ada1e2fafa5d" />
-<img width="1124" height="820" alt="image" src="https://github.com/user-attachments/assets/9b2e4420-6065-4f2c-a101-139741648f5c" />
+<p>
+-Extract "osTicket-v1.15.8.zip" from the osTicket-Installation-Files. then put the destination of said extraction fold to the folder known as (C:\inetpub\wwwroot). You can copy (C:\inetpub\wwwroot) and paste it into the search when browsing for the file
+ <p>
+<p>
+<img width="835" height="443" alt="4b677bef-9d16-429c-b405-ebe4e983ec92" src="https://github.com/user-attachments/assets/a7f4fd24-9058-4570-869d-3f68fdd212a6" />
 </p>
 <p>
-Extract "osTicket-v1.15.8.zip" from the osTicket-Installation-Files. Open the extracted folder and copied the upload folder to wwwroot (C:\inetpub\wwwroot). Upload was renamed to osTicket to align with the intended site structure.
+it should look like this ( note i ended up deleting the scripts fold you only need the upload folder. i forgot to take a new screenshot)
 </p>
 <br />
-
+<img width="848" height="320" alt="5cc7e567-775a-4f28-9ccd-a39384c701aa" src="https://github.com/user-attachments/assets/f86545d3-ba7c-4d50-a79f-061ac1cca4ce" />
 <p>
-<img width="1421" height="747" alt="image" src="https://github.com/user-attachments/assets/9c6ec5b9-768d-4994-a269-4cf28db4605d" />
+<p>
+- next rename the upload folder to "osTicket"
+ <p>
+<p>
+  <img width="291" height="116" alt="ba7b929b-b77b-4fb9-9297-4043c5f633e8" src="https://github.com/user-attachments/assets/b7a70e7a-c41e-47d4-ae50-94e1e8ff4b05" />
+<p>
+<p>
+ -Reload IIS (Open IIS, Stop and Start the server)
+<p>
+<p>
+  <img width="1423" height="455" alt="581637968-5aad967f-e66a-430e-b201-7a2f36509377" src="https://github.com/user-attachments/assets/31956153-a0d7-40be-9bbb-d01649903126" />
+<p>
+<p>
+  Go to sites -> Default -> osTicket
+<img width="413" height="377" alt="581644238-9c6ec5b9-768d-4994-a269-4cf28db4605d pt1" src="https://github.com/user-attachments/assets/d183c989-e193-4622-bfc9-a57a2eb8008a" />
+<p>
+<p>
+On the right, click “Browse *:80”
+<p>
+<p>
+  <img width="1206" height="255" alt="581644238-9c6ec5b9-768d-4994-a269-4cf28db4605d pt2" src="https://github.com/user-attachments/assets/b42f9297-9253-4cb1-8dfb-a47b0100ed8f" />
+<p>
+<p>
 <img width="916" height="924" alt="image" src="https://github.com/user-attachments/assets/9d2f3028-0b58-4e5c-9dda-a010a42cc9c4" />
 </p>
 <p>
-Reload IIS. In IIS navigate to Sites -> Default Web Site -> osTicket and click on Browse:80(http). This will open osTicket site in your browser and verifies that everything is working properly.
+
 </p>
 <br />
 
