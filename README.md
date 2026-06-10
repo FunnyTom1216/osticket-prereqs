@@ -7,7 +7,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
+- Microsoft Azure (Virtual Machines/Computer)
 - Remote Desktop
 - Internet Information Services (IIS)
 
@@ -20,112 +20,211 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 - Azure Subscription
 - Remote Desktop Connection
-- osTicket
-- MySQL
-- Heidi
-- PHP
+- osTicket  [https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD]
+- MySQL   [https://drive.google.com/file/d/1_OWh9p7VQLcrB0q_V7qT8yHl0xo5gv7z/view?usp=share_link]
+- Heidi   [https://docs.google.com/document/d/1WovrX2DaS9xkfaSr4LXyB4YnnWpXIgPCMMbbfgHmGVw/edit]
+- PHP     [http://localhost/osTicket/scp/login.php]
 
   
 <h2>Installation Steps</h2>
 
-### Step 1: Create and Configure the Azure Virtual Machine
+### Section 1: Creating a Resource group, a Virtual Network and Virtual Machine 
+First create an Azure account or sign in. (https://azure.microsoft.com/en-us)
 <p>
-<img width="1837" height="846" alt="image" src="https://github.com/user-attachments/assets/d4526df4-3ff5-48fc-b2f1-aa3bc52d23d3" />
+<img width="1618" height="587" alt="Screenshot 2026-06-09 191208" src="https://github.com/user-attachments/assets/1f0b0d40-7ad3-4296-bacd-9b84d6971af0" />
+
 
 </p>
 <p>
-Logged into Azure to start creating my enviornment for osTicket. Created a Resource Group called "osTicket" for where the Virtual Machine and Virtual Network will be located.
+-Then find and click on the Resource Group tab on the left (Picture 1) then select +Create (Picture 2) 
 </p>
+Picture 1
+</p>
+<img width="724" height="462" alt="Screenshot 2026-06-09 192356" src="https://github.com/user-attachments/assets/026b86eb-4c0a-4cf2-a222-04541d58daa9" />
+
+</p>
+<p>
+Picture 2
+</p>
+<img width="498" height="343" alt="Screenshot 2026-06-09 195306" src="https://github.com/user-attachments/assets/d8a4965a-c7fc-4a87-b7b8-c7f9ec9ba61a" />
+
+
+</p>
+<p>
+-On this screen, your subscription (yellow) may be different but thats okay (select the one available to you). For this project, the Resource Group Name (Green) would be osTicket_Project and the Region (Blue) should automatically select the best fit for you. Once all is filled out, select Review and create button at the bottom of your screen, then create again on the next page. 
 <br />
 
 <p>
-
-<img width="1868" height="879" alt="581001344-6e13ea6d-bf7f-48e1-82af-092d9ad8f3d9" src="https://github.com/user-attachments/assets/7fe18a04-30bf-47a4-bf42-47f3724bacc3" />
-
+<img width="732" height="359" alt="Screenshot 2026-06-09 200632" src="https://github.com/user-attachments/assets/aae0e6ab-5924-4af0-a329-78519060fea5" />
 </p>
 <p>
-After creating the resource group I needed to create a virtual network for my setup on the Virtual Machine. I called the network "ticket-vnet" and put it into the resource group.
+-Now your Resource Group is made! You may need to refresh the page if it does not show up right away. 
 </p>
 <br />
+<img width="1333" height="288" alt="image" src="https://github.com/user-attachments/assets/fc7db7da-e601-48db-905b-9d26ea3e5759" />
+<p>
+<p>
+-Next we will create a Virtual Machines. From your current screen, in the Azure search bar, search for Virtual Machines. Select the one that just says Virtual Machine. Then select +Create > Virtual Machine to get to the next step. 
+</p>
+<p>
+<img width="648" height="288" alt="Screenshot 2026-06-09 203409" src="https://github.com/user-attachments/assets/2f8d2367-f2be-4e22-90c6-07b67d9f314c" />
+</p>
+<img width="652" height="390" alt="image" src="https://github.com/user-attachments/assets/ca60c9d7-a5ec-4be9-9167-1cf429b764aa" />
+<p>
+<p>
+-Key things to look for in this sections are: Resource group (Yellow)(make sure the correct group is selected, osTicket_Project), Virtual Machine name (Green) (which will be osTicket-VM), Region (Blue) (best fit for your location, may be different from the one shown on here). 
+<p>
+<p>
+<img width="764" height="399" alt="Screenshot 2026-06-09 204453" src="https://github.com/user-attachments/assets/3fa972e6-c804-4353-a8ec-cbad3e058912" />
+<p>
+<p>
+-More things to keep an eye on are Availability Zone (May be affected by your region, Red), Image (make sure it is either Windows 10 or 11 in the drop down, not Windows server, Blue), Size (Yellow, make sure it has minimum 2 vcpus, 8 GiB memory,)
+</p>
+<p>
+<img width="826" height="511" alt="Screenshot 2026-06-09 205839" src="https://github.com/user-attachments/assets/dcdade8f-f058-4426-92b3-3d4df7758b31" />
+<p>
+<p>
 
-<p>
-<img width="1874" height="881" alt="image" src="https://github.com/user-attachments/assets/8de4c4a8-9a73-4284-bac0-17cbccdc6670" />
-</p>
-<p>
-Creating a Virtual Machine called "ost-vm". Using the resource group made before (osTicket) and put it there. I'm also using "West US 2" as my region because that is closest to me for quicker feedback, but can be done in a different Region. 
-</p>
-<br />
-
-<p>
-<img width="1142" height="542" alt="image" src="https://github.com/user-attachments/assets/e9d5b76a-9a96-4e71-9143-459e593b1dd8" />
-</p>
-<p>
-For the Image/OS I used Windows 10 Enterprise, version 22H2 - x64 Gen2. For Size I used Standard L2s v4 (2 vcpus, 16 GiB memory).
-
-<p>
-<img width="1870" height="879" alt="image" src="https://github.com/user-attachments/assets/0da4fb5a-2c73-48d3-9af2-9259f71dd623" />
-</p>
-<p>
-For logging into the Virtual Machine you need a Username and Password. 
+-For the Administration account, you need a Username and Password (Yellow). We will be using: 
     
     - Username: labuser
     - Password: Cyberlab123!
 
-Since I'm using a Windows 10/11 OS I need to check the licensing at the bottom. The usernames and passwords I use are for this project only. Its never good to store your passwords in plain text.
+-Since I'm using a Windows 10/11 OS I need to check the Licensing (Blue) at the bottom. The usernames and passwords I use are for this project only. Its never good to store your passwords in plain text. Then select (Circled) Next: Disk > then select Next again at the bottom of the screen, and this will take you to the Networking tab. 
 </p>
 <br />
+<img width="757" height="642" alt="Screenshot 2026-06-09 210255" src="https://github.com/user-attachments/assets/f6db8c64-7e33-41cf-b4d7-e580842cf630" />
+<p>
+<p>
+<p>
 
-<p>
-<img width="1870" height="882" alt="image" src="https://github.com/user-attachments/assets/004193b7-3560-4c90-b98d-9bc900493a07" />
+-Once in the Networking tab and verify the Virtual Network is selected to "osTicket-VM-vnet". Finally select Review + Create at the bottom, wait for it to validate. 
 </p>
 <p>
-Went to the Networking tab and verified that my Virtual Network is selected to "ticket-vnet". Then I went to the Review + Create tab to finish my Virtual Machine. 
+ <img width="586" height="767" alt="Screenshot 2026-06-09 211123" src="https://github.com/user-attachments/assets/e949fc6e-9cac-4419-890a-11207932c76b" />
+<p>
 </p>
+-Once it is done, click Create at the bottom and you have now finished creating a Resource group and a Virtual Machine.
+</p>
+____________________________________________________________________________________________________________________________________________
 
-### Step 2: Getting osTicket Files and Dependicies
+
+### Step 2: Installing osTicket Files on VM
 <p>
-<img width="976" height="566" alt="image" src="https://github.com/user-attachments/assets/b86befaf-0299-4309-8bf6-23841941cb09" />
+In this section we will be using a Remote Desktop Connection (RDC) to connect to our Virtual Machine (VM) that we just created. We will also install osTicket files and Dependencies in the VM.
 </p>
 <p>
-Go to the windows search bar to open up "Remote Desktop Connection". Copy + Paste the public IP address of the virtual machine to connect. Enter the username and password used during the setup process. 
+ -Since I am using windows, this step may be different depending on if you are using Mac or Linux. On your taskbar (Windows icon or start menu), you will need to search "Remote Desktop Connection"
 </p>
 <br />
-
-<p>
-<img width="362" height="156" alt="image" src="https://github.com/user-attachments/assets/3beb0b89-e320-4d23-9b42-3e11a04ccbb6" />
-<img width="135" height="221" alt="image" src="https://github.com/user-attachments/assets/bae53f78-9405-4375-b3c3-8e0fec4d0a32" />
+<img width="380" height="82" alt="Screenshot 2026-06-09 213145" src="https://github.com/user-attachments/assets/0e8613d5-bdcf-4c58-bdd6-ef4a717b2fea" />
+<img width="294" height="402" alt="Screenshot 2026-06-09 213319" src="https://github.com/user-attachments/assets/53965a80-76e6-445f-b6d1-c1986ac178de" />
 </p>
 <p>
-Inside the VM download the required osTicket Installation Files and saved them locally to the desktop. Extracted the contents of the file named "osTicket-Installation-Files". 
+<p>
+</p>
+<p>
+-A RDC window will pop up, move it to the side for now while we go back to the VM we created. Without clicking the file, on the far right side, there is a tab labled Public IP Address. We will need this for the RDC window so we can connect to the VM. Copy the Public IP Address and paste them to the drop down in the RDC pop up. 
+</p>
+<p>
+<img width="1360" height="499" alt="Screenshot 2026-06-09 214144" src="https://github.com/user-attachments/assets/ca6b2872-051f-4431-9f36-48b19f99c574" />
+</p>
+<p>
+-On the RDC, click Connect. A security window will pop up asking for credentials. Instead of using your personal account to log in, select More Choices > different account, then you will use the username and password we created earlier. Once entered, click Okay. Another window might pop up if you are on Windows, select yes on the pop up to continue to log in.
+    
+    - Username: labuser
+    - Password: Cyberlab123!
+<img width="1051" height="398" alt="Screenshot 2026-06-09 215153" src="https://github.com/user-attachments/assets/a523a04c-e468-4a43-b884-4a0f438cda83" />
+
+
 </p>
 <br />
+When you have logged in, you will have successfully conncected your RDC to your VM.  
+</p>
+</p>
+</p>
+</p>
+-ONce in the VM,  access the internet broswer and download the osTicket-Installation-Files.zip and unzip it onto your desktop. The folder should be called “osTicket-Installation-Files”
+<p>
+
+  -We will use the files in this folder to install osTicket and some of the dependencies. (File link is in the List of Prerequisits, same one as below)
+</p>
+[https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD]
+ 
+</p>
+</p>
+<img width="967" height="342" alt="0ff13ddd-7d81-45c2-8ede-a0889b6a8846" src="https://github.com/user-attachments/assets/cee2d4d9-267f-48ac-9f84-ac9b07444c86" />
+</p>
+</p>
+</p>
+-This window will pop up, click "download anyway", no it is not a virus :)
+</p>
+</p>
+<img width="519" height="171" alt="72c8247c-3f3e-464c-9f09-034624dff7a1" src="https://github.com/user-attachments/assets/0f68aed0-6594-4d2b-a25e-6db84d1e3e8a" />
+</p>
+</p>
+</p>
+-Open your downloads, and you should see the zip file you just downloaded. Right click on the file or click Extract all on the right, a new unzipped folder will be created. Step 2 Completed.
+</p>
+</p>
+<img width="886" height="383" alt="fe50d69a-9099-44f5-ab17-c3cc011f39d6" src="https://github.com/user-attachments/assets/c41caa4a-1fe1-4b59-a3d8-db437ba7d792" />
+</p>
+</p>
+__________________________________________________________________________________________________________________
+<p>
+  
+</p>
 
 ### Step 3: Install and Enable IIS with CGI. (Web Server)
 
 <p>
-<img width="1118" height="628" alt="image" src="https://github.com/user-attachments/assets/83f7eded-fa32-4f2f-bfff-8f4b1aea776b" />
-<img width="1121" height="626" alt="image" src="https://github.com/user-attachments/assets/3d157a89-a727-4b91-9638-9e41be789ca3" />
-<img width="412" height="369" alt="image" src="https://github.com/user-attachments/assets/d0b1b74c-6126-47ae-be85-c3a02d3a791e" />
+<p>
+In this Section we will be ilstalling/ enabling IIS in the VM.
+<p>
+<p>
+ 
+-From the VM, you need to open your control panel from the start menu or the Windows menu.
+<img width="727" height="293" alt="Screenshot 2026-06-09 230337" src="https://github.com/user-attachments/assets/1d5f002d-0086-4ab9-af4d-1b41feda6cc2" />
+<p>
+<p>
+<p>
 
+-Once opened, click on programs -> Turn Windows features on or off 
+<img width="448" height="377" alt="581603789-83f7eded-fa32-4f2f-bfff-8f4b1aea776b" src="https://github.com/user-attachments/assets/7f0763cd-9f28-446d-9c66-80167492224a" /><img width="478" height="300" alt="581604105-3d157a89-a727-4b91-9638-9e41be789ca3" src="https://github.com/user-attachments/assets/12676a5e-6af8-4d98-ba67-8638b98424b2" />
+<p>
+<p>
+<p>
+A window will pop up, locate and select the box next to Internet Information Services (IIS), click the expand next to the box and locate the World Wide Web Services -> Application Development Features -> [X] CGI 
 </p>
 <p>
-Go to the start menu and open the control panel. Then click on programs -> Programs and Features -> Turn Windows features on or off.
-</p>
-<br />
-
-<p>
-<img width="1123" height="630" alt="image" src="https://github.com/user-attachments/assets/fc195a79-7c5f-447a-87a3-9bcd81fa0f86" />
-<img width="450" height="425" alt="image" src="https://github.com/user-attachments/assets/ec4a08f1-4ca3-4131-ba63-7549ac2e27d7" />
+<img width="418" height="372" alt="581604809-fc195a79-7c5f-447a-87a3-9bcd81fa0f86" src="https://github.com/user-attachments/assets/a0fa9a93-e072-4776-8a8b-68da57cfb0a6" />
 </p>
 <p>
-Enable Internet Information Services. Go to Internet Information Services -> World Wide Web Services -> Application Development Features -> Enable CGI. This will support PHP processing and prepare the server environment for osTicket deployment.
+<img width="450" height="425" alt="581607275-ec4a08f1-4ca3-4131-ba63-7549ac2e27d7" src="https://github.com/user-attachments/assets/f80ffe73-a013-45db-b0df-60ef312f7c01" />
+<p>
+  
+</p>
+This will support PHP processing and prepare the server environment for osTicket deployment.
 
     - Note: You can go to a browser and enter the loopback IP address 127.0.0.1 to verify that the web server setup worked.
+<img width="933" height="265" alt="e4f10360-4985-459d-875b-68ce4d9b261a" src="https://github.com/user-attachments/assets/08f9195d-7ef4-4a30-abf8-7146bf45e0a0" />
 
-<img width="918" height="947" alt="image" src="https://github.com/user-attachments/assets/5a0a3419-752d-4788-b8dc-556ed5f2069e" />
-
+<p>
+<p>
+<p>
+<p>
+<p>
+<p>
+<p>
+<p>
+ 
+</p>
 </p>
 <br />
+_________________________________________________________________________________________________________________
+<p>
+  
+</p>
 
 ### Step 4: Installing Required Components for osTicket
 <p>
