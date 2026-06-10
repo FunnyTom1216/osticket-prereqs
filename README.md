@@ -23,10 +23,12 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <h2>List of Prerequisites</h2>
 
 - Azure Subscription
-- Azure Virtual Machine
-    - OS: Windows 10
-    - vCPUs: 2
 - Remote Desktop Connection
+- osTicket
+- MySQL
+- Heidi
+- PHP
+
   
 <h2>Installation Steps</h2>
 
